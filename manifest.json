@@ -1,10 +1,32 @@
 {
-    "manifest_version": 3,
-    "name": "Information from linkedin",
-    "version": "1.0",
-    "description": "Get Information from contact profiles",
-    "action": {
-        "default_popup": "App/index.html"
-      },
-    "permissions": ["activeTab", "scripting"]
+  "manifest_version": 3,
+  "name": "Information from linkedin",
+  "description": "Get Information from contact profiles",
+  "version": "1.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "js": [
+        "./app.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "./app/index.html",
+    "default_icon": {
+      "32": "./app/image/32.png",
+      "48": "./app/image/48.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "icons": {
+    "32": "./app/image/32.png",
+    "48": "./app/image/48.png"
+  }
 }
